@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amezing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200" id="New Zealand" src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?cs=srgb&dl=boat-exotic-freedom-1371360.jpg&fm=jpg" alt="New Zealand"></li>
+            <li><img width="200" id="Travel" src="https://wallpaperaccess.com/full/1431673.jpg" alt="Travel"></li>
+            <li><img width="200" id="sunrise" src="https://images.pexels.com/photos/915972/pexels-photo-915972.jpeg?cs=srgb&dl=adult-adventure-backlit-915972.jpg&fm=jpg" alt="sunrise"></li>
+            <li><img width="200" id="Plane" src="https://th.bing.com/th/id/R.b794aee72b944d355e06aceeadc70061?rik=hL7tJEouCEwulQ&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f89%2f5%2fkz30aA.jpg&ehk=%2fYFovbMKgjxDVE0lyzGmgSOQdDOV8QPwOSU0oi2FiYw%3d&risl=&pid=ImgRaw&r=0" alt="Plane"></li>
+            <li><img width="200" id="river" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-places-for-solo-travel-1556056047.png?crop=0.766xw:0.575xh;0.0978xw,0.200xh&resize=1200:*" alt="river"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>   
+</body>
+<script>
+    // document.getElementById('sunrise').onclick = function(){
+    //     alert("sunrise clicked")
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");      
+    // }, false)
+
+    // document.getElementById('sunrise').addEventListener('click', function(e){
+    //     console.log("sunrise clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    // }, false)
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.preventNode
+            removeIt.remove()  
+        }
+        
+    })
+</script>
+</html>
